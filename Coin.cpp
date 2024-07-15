@@ -1,7 +1,7 @@
+//coin.cpp
 #include "Coin.h"
 
-
-Coin::Coin() {
+Coin::Coin(int value) : centValue(value) {
     srand(static_cast<unsigned int>(time(0)));
     int randNum = rand() % 2;
     if (randNum == 0)
@@ -19,12 +19,13 @@ void Coin::flip() {
 }
 
 bool Coin::isHeads() const {
-    return isHeads;
+    return isHeads2;
 }
 
 string Coin::getSideUp() const {
-    if (isHeads)
+    if (isHeads2)
         return "heads";
     else
         return "tails";
 }
+

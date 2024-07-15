@@ -1,3 +1,4 @@
+//coin.cpp
 #include "Game.h"
 #include "Coin.h"
 
@@ -8,32 +9,34 @@ using namespace std;
 void Game::printFlipResults() {
 	string heads = "heads";
 	string tails = "tails";
-	bool isHeads = false;
 
 	for (int i = 0; i < 3; i++) {
 		if (coins[i].isHeads())
-			cout << getSideUp() << endl;
+			cout << coins[i].getSideUp() << endl;
 	}
 }
 void Game::FlipCoins() {
-
+	for (int i = 0; i < 3; i++) {
+		coins[i].flip();
+	}
 }
 void Game::printScore() {
-	cout << getScore() << endl;
+	cout << "Total Score: " << getScore() << endl;
 }
-int Game::getRounds() {
+int Game::getRounds() const {
 	return rounds;
 }
-int Game::getScore() {
+int Game::getScore() const {
 	return totalScore;
 }
-Game::Game() :
-	totalScore(0), rounds(0)
+Game::Game() : totalScore(0), rounds(0)
 {
-coins[3] = { Coin(25),
-            Coin(10),
-            Coin(5)  };
+	
+	coins[0] = Coin(25);
+	coins[1] = Coin(10);
+	coins[2] = Coin(5);
+
 };
-void playGame() {
+void Game::playGame() {
 
 }
