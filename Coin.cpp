@@ -5,17 +5,17 @@ Coin::Coin() {
     srand(static_cast<unsigned int>(time(0)));
     int randNum = rand() % 2;
     if (randNum == 0)
-        isHeads2= true;
+        isHeads2 = true;
     else
-        isHeads2= false;
+        isHeads2 = false;
 }
 
 void Coin::flip() {
     int randNum = rand() % 2;
     if (randNum == 0)
-        isHeads2= true;
+        isHeads2 = true;
     else
-        isHeads2= false;
+        isHeads2 = false;
 }
 
 bool Coin::isHeads() const {
