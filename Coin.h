@@ -1,16 +1,24 @@
+//Coin.h
 #pragma once
 #ifndef COIN_H
 #define COIN_H
-#include<iostream>
+
+#include <cstdlib> 
+#include <ctime>    
+#include <iostream>
 using namespace std;
 
 class Coin {
 private:
-    bool isHeads2;
+    bool isHeads2; 
+    const int centValue;
 public:
-    Coin();
+    Coin(int value);
     void flip();
     bool isHeads() const;
     string getSideUp() const;
 };
+
 #endif
+
+
