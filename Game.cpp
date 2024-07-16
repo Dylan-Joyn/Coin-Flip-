@@ -1,7 +1,5 @@
 //coin.cpp
 #include "Game.h"
-#include "Coin.h"
-
 
 #include<iostream>
 using namespace std;
@@ -31,12 +29,16 @@ int Game::getScore() const {
 }
 Game::Game() : totalScore(0), rounds(0)
 {
-	
-	coins[0] = Coin(25);
-	coins[1] = Coin(10);
-	coins[2] = Coin(5);
 
 };
 void Game::playGame() {
+	const int totalRounds = 5;
 
+    while (rounds < totalRounds) {
+        FlipCoins();
+        printFlipResults();
+        rounds++;
+    }
+
+    printScore();
 }
